@@ -1,1 +1,39 @@
-<p>progress works!</p>
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Progress bar</h4>
+				<div class="progress m-t-20">
+					<div class="progress-bar bg-danger progress-bar-striped active"
+						style="height:10px;"
+						role="progressbar"
+						[style.width]="getProgress1">
+					</div>
+				</div>
+				<div class="progress m-t-20">
+					<div class="progress-bar bg-success progress-bar-striped active"
+						style="height:10px;"
+						role="progressbar"
+						[style.width]="getProgress2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-6">
+		<div class="card">
+			<div class="card-body">
+				<app-increment [numberProgress]="progress1" (numberProgress)="progress1 = $event" [btnClass]="'btn-danger'"></app-increment>
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="card">
+			<div class="card-body">
+				<app-increment [numberProgress]="progress2" (numberProgress)="progress2 = $event" [btnClass]="'btn-success'"></app-increment>
+			</div>
+		</div>
+	</div>
+</div>
